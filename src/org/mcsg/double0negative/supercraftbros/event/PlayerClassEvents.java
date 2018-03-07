@@ -8,7 +8,6 @@ import org.bukkit.craftbukkit.v1_12_R1.entity.CraftPlayer;
 import org.bukkit.entity.Fireball;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
-import org.bukkit.event.EventPriority;
 import org.bukkit.event.Listener;
 import org.bukkit.event.block.BlockIgniteEvent;
 import org.bukkit.event.block.BlockPlaceEvent;
@@ -37,7 +36,7 @@ public class PlayerClassEvents implements Listener {
         gm = GameManager.getInstance();
     }
     
-    @EventHandler(priority = EventPriority.LOWEST)
+    @EventHandler
     public void blockFire(BlockIgniteEvent e) {
         System.out.println("lighing");
         final Block b = e.getBlock();
@@ -120,7 +119,7 @@ public class PlayerClassEvents implements Listener {
         }
     }
     
-    @EventHandler(priority = EventPriority.LOWEST)
+    @EventHandler
     public void onEntityExplode(EntityExplodeEvent e) {
         
         e.blockList().clear();
